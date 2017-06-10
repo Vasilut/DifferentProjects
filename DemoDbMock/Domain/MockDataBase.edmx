@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mockdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Details">
+          <Key>
+            <PropertyRef Name="DetailId" />
+          </Key>
+          <Property Name="DetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MatcheId" Type="int" Nullable="false" />
+          <Property Name="FoundDate" Type="date" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="LinkId" />
+          </Key>
+          <Property Name="LinkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="Url" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Matches">
+          <Key>
+            <PropertyRef Name="MatcheId" />
+          </Key>
+          <Property Name="MatcheId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="LinkId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="RootUrl" Type="nvarchar(max)" />
+          <Property Name="PriceRegex" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__Details__MatcheI__1B0907CE">
+          <End Role="Matches" Type="Self.Matches" Multiplicity="1" />
+          <End Role="Details" Type="Self.Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matches">
+              <PropertyRef Name="MatcheId" />
+            </Principal>
+            <Dependent Role="Details">
+              <PropertyRef Name="MatcheId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Links__StoreId__182C9B23">
+          <End Role="Stores" Type="Self.Stores" Multiplicity="1" />
+          <End Role="Links" Type="Self.Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matches__LinkId__1A14E395">
+          <End Role="Links" Type="Self.Links" Multiplicity="1" />
+          <End Role="Matches" Type="Self.Matches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Links">
+              <PropertyRef Name="LinkId" />
+            </Principal>
+            <Dependent Role="Matches">
+              <PropertyRef Name="LinkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matches__Product__1920BF5C">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="Matches" Type="Self.Matches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Matches">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mockdbModelStoreContainer">
+          <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Matches" EntityType="Self.Matches" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Details__MatcheI__1B0907CE" Association="Self.FK__Details__MatcheI__1B0907CE">
+            <End Role="Matches" EntitySet="Matches" />
+            <End Role="Details" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Links__StoreId__182C9B23" Association="Self.FK__Links__StoreId__182C9B23">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matches__LinkId__1A14E395" Association="Self.FK__Matches__LinkId__1A14E395">
+            <End Role="Links" EntitySet="Links" />
+            <End Role="Matches" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matches__Product__1920BF5C" Association="Self.FK__Matches__Product__1920BF5C">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Matches" EntitySet="Matches" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mockdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="DetailId" />
+          </Key>
+          <Property Name="DetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MatcheId" Type="Int32" Nullable="false" />
+          <Property Name="FoundDate" Type="DateTime" Precision="0" />
+          <Property Name="Price" Type="Double" />
+          <NavigationProperty Name="Match" Relationship="Self.FK__Details__MatcheI__1B0907CE" FromRole="Details" ToRole="Matches" />
+        </EntityType>
+        <EntityType Name="Link">
+          <Key>
+            <PropertyRef Name="LinkId" />
+          </Key>
+          <Property Name="LinkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Store" Relationship="Self.FK__Links__StoreId__182C9B23" FromRole="Links" ToRole="Stores" />
+          <NavigationProperty Name="Matches" Relationship="Self.FK__Matches__LinkId__1A14E395" FromRole="Links" ToRole="Matches" />
+        </EntityType>
+        <EntityType Name="Match">
+          <Key>
+            <PropertyRef Name="MatcheId" />
+          </Key>
+          <Property Name="MatcheId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="LinkId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Details" Relationship="Self.FK__Details__MatcheI__1B0907CE" FromRole="Matches" ToRole="Details" />
+          <NavigationProperty Name="Link" Relationship="Self.FK__Matches__LinkId__1A14E395" FromRole="Matches" ToRole="Links" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Matches__Product__1920BF5C" FromRole="Matches" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Matches" Relationship="Self.FK__Matches__Product__1920BF5C" FromRole="Products" ToRole="Matches" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RootUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PriceRegex" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Links" Relationship="Self.FK__Links__StoreId__182C9B23" FromRole="Stores" ToRole="Links" />
+        </EntityType>
+        <Association Name="FK__Details__MatcheI__1B0907CE">
+          <End Role="Matches" Type="Self.Match" Multiplicity="1" />
+          <End Role="Details" Type="Self.Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matches">
+              <PropertyRef Name="MatcheId" />
+            </Principal>
+            <Dependent Role="Details">
+              <PropertyRef Name="MatcheId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Links__StoreId__182C9B23">
+          <End Role="Stores" Type="Self.Store" Multiplicity="1" />
+          <End Role="Links" Type="Self.Link" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matches__LinkId__1A14E395">
+          <End Role="Links" Type="Self.Link" Multiplicity="1" />
+          <End Role="Matches" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Links">
+              <PropertyRef Name="LinkId" />
+            </Principal>
+            <Dependent Role="Matches">
+              <PropertyRef Name="LinkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matches__Product__1920BF5C">
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="Matches" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Matches">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mockdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Details" EntityType="Self.Detail" />
+          <EntitySet Name="Links" EntityType="Self.Link" />
+          <EntitySet Name="Matches" EntityType="Self.Match" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <AssociationSet Name="FK__Details__MatcheI__1B0907CE" Association="Self.FK__Details__MatcheI__1B0907CE">
+            <End Role="Matches" EntitySet="Matches" />
+            <End Role="Details" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Links__StoreId__182C9B23" Association="Self.FK__Links__StoreId__182C9B23">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matches__LinkId__1A14E395" Association="Self.FK__Matches__LinkId__1A14E395">
+            <End Role="Links" EntitySet="Links" />
+            <End Role="Matches" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matches__Product__1920BF5C" Association="Self.FK__Matches__Product__1920BF5C">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Matches" EntitySet="Matches" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mockdbModelStoreContainer" CdmEntityContainer="mockdbEntities">
+          <EntitySetMapping Name="Details">
+            <EntityTypeMapping TypeName="mockdbModel.Detail">
+              <MappingFragment StoreEntitySet="Details">
+                <ScalarProperty Name="DetailId" ColumnName="DetailId" />
+                <ScalarProperty Name="MatcheId" ColumnName="MatcheId" />
+                <ScalarProperty Name="FoundDate" ColumnName="FoundDate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Links">
+            <EntityTypeMapping TypeName="mockdbModel.Link">
+              <MappingFragment StoreEntitySet="Links">
+                <ScalarProperty Name="LinkId" ColumnName="LinkId" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Matches">
+            <EntityTypeMapping TypeName="mockdbModel.Match">
+              <MappingFragment StoreEntitySet="Matches">
+                <ScalarProperty Name="MatcheId" ColumnName="MatcheId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="LinkId" ColumnName="LinkId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="mockdbModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="mockdbModel.Store">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RootUrl" ColumnName="RootUrl" />
+                <ScalarProperty Name="PriceRegex" ColumnName="PriceRegex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

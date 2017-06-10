@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="509a011a384d44678805fc7e9204579f" Name="Diagram1">
+        <EntityTypeShape EntityType="mockdbModel.Detail" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="mockdbModel.Link" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="mockdbModel.Match" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mockdbModel.Product" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mockdbModel.Store" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="mockdbModel.FK__Details__MatcheI__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="mockdbModel.FK__Links__StoreId__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="mockdbModel.FK__Matches__LinkId__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="mockdbModel.FK__Matches__Product__1920BF5C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
