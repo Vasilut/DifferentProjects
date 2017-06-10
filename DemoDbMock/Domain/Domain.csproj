@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A3D6DCE6-E6B7-4557-B752-CD81DB7266E9}</ProjectGuid>
+    <ProjectGuid>{12AAE47F-365D-475D-B07E-1DD4634464A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DemoDbMock</RootNamespace>
-    <AssemblyName>DemoDbMock</AssemblyName>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
