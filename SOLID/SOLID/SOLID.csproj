@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Liskov\ProblemLiskov.cs" />
+    <Compile Include="Liskov\SolutionLiskov.cs" />
     <Compile Include="Open closed principle\ProblemOcp.cs" />
     <Compile Include="Open closed principle\SolutionOcp.cs" />
     <Compile Include="Program.cs" />
@@ -53,6 +55,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
