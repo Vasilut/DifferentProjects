@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface principle\ProblemInterfacePrinciple.cs" />
+    <Compile Include="Interface principle\SolutionInterfacePrinciple.cs" />
     <Compile Include="Liskov\ProblemLiskov.cs" />
     <Compile Include="Liskov\SolutionLiskov.cs" />
     <Compile Include="Open closed principle\ProblemOcp.cs" />
