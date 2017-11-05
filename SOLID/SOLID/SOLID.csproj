@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Open closed principle\ProblemOcp.cs" />
+    <Compile Include="Open closed principle\SolutionOcp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingleResponsabilityPrinciple\Problem.cs" />
