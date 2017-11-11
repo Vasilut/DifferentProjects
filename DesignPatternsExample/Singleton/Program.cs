@@ -12,6 +12,9 @@ namespace Singleton
         {
             //not safe
             var singletonNotSafe = SingletonNotSafe.Instance;
+            var second = SingletonNotSafe.Instance;
+
+            second.SayHelloToSingleton();
             singletonNotSafe.SayHelloToSingleton();
 
             ////safe

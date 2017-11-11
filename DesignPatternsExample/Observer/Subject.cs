@@ -30,14 +30,14 @@ namespace Observer
             _observers.ForEach(x => x.Update());
         }
 
-        public void Subscribe(Observver observer)
+        public void Subscribe(Observver client)
         {
-            _observers.Add(observer);
+            _observers.Add(client);
         }
 
-        public void Unsubsribe(Observver observer)
+        public void Unsubsribe(Observver client)
         {
-            _observers.Remove(observer);
+            _observers.Remove(client);
         }
     }
 }
