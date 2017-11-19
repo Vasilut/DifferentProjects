@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Entities.DomainAzure
+namespace EntitiesAzure.Domain
 {
     using System;
     using System.Data.Entity;

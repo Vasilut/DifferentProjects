@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
+using System.Data.Entity;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Entities.Repository
+namespace Repository.Services
 {
     public class GenericRepository<C, T> : IRepository<T> where T : class where C : DbContext, new()
     {

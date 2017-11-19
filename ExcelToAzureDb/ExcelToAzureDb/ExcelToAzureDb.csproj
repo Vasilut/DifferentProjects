@@ -77,9 +77,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntitiesAzure\EntitiesAzure.csproj">
+      <Project>{747eb1ec-e356-4c73-8410-4e805a656b50}</Project>
+      <Name>EntitiesAzure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{5a1287b9-009f-4b8f-9aca-190fcc7cece4}</Project>
       <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{8722cc65-fd01-4756-8dd4-21107e3e34ff}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

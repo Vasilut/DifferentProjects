@@ -1,6 +1,6 @@
-﻿using Entities.DomainAzure;
+﻿using EntitiesAzure.Domain;
 
-namespace Entities.Repository
+namespace Repository.Services
 {
     public class AzureRepository : GenericRepository<AzureResultsEntities, Rezultate>, IRepository<Rezultate>
     {

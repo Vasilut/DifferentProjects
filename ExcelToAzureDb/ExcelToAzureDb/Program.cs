@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using LinqToExcel;
-using Entities.Repository;
 using Entities.Domain;
+using Repository.Services;
 
 namespace ExcelToAzureDb
 {

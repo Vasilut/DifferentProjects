@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToAzureDb", "ExcelToAz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{5A1287B9-009F-4B8F-9ACA-190FCC7CECE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitiesAzure", "EntitiesAzure\EntitiesAzure.csproj", "{747EB1EC-E356-4C73-8410-4E805A656B50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{8722CC65-FD01-4756-8DD4-21107E3E34FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{5A1287B9-009F-4B8F-9ACA-190FCC7CECE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A1287B9-009F-4B8F-9ACA-190FCC7CECE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A1287B9-009F-4B8F-9ACA-190FCC7CECE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747EB1EC-E356-4C73-8410-4E805A656B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747EB1EC-E356-4C73-8410-4E805A656B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747EB1EC-E356-4C73-8410-4E805A656B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747EB1EC-E356-4C73-8410-4E805A656B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8722CC65-FD01-4756-8DD4-21107E3E34FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8722CC65-FD01-4756-8DD4-21107E3E34FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8722CC65-FD01-4756-8DD4-21107E3E34FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8722CC65-FD01-4756-8DD4-21107E3E34FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

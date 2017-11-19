@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A1287B9-009F-4B8F-9ACA-190FCC7CECE4}</ProjectGuid>
+    <ProjectGuid>{747EB1EC-E356-4C73-8410-4E805A656B50}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entities</RootNamespace>
-    <AssemblyName>Entities</AssemblyName>
+    <RootNamespace>EntitiesAzure</RootNamespace>
+    <AssemblyName>EntitiesAzure</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -51,53 +51,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Rezultate.Context.cs">
+    <Compile Include="Domain\AzureResults.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Rezultate.Context.tt</DependentUpon>
+      <DependentUpon>AzureResults.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\AzureResults.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AzureResults.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\AzureResults.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AzureResults.edmx</DependentUpon>
     </Compile>
     <Compile Include="Domain\Rezultate.cs">
-      <DependentUpon>Rezultate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Domain\Rezultate.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Rezultate.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Domain\Rezultate1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Rezultate.tt</DependentUpon>
+      <DependentUpon>AzureResults.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Domain\Rezultate.edmx">
+    <EntityDeploy Include="Domain\AzureResults.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Rezultate.Designer.cs</LastGenOutput>
+      <LastGenOutput>AzureResults.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Domain\Rezultate.edmx.diagram">
-      <DependentUpon>Rezultate.edmx</DependentUpon>
+    <None Include="Domain\AzureResults.edmx.diagram">
+      <DependentUpon>AzureResults.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Domain\Rezultate.Context.tt">
+    <Content Include="Domain\AzureResults.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Rezultate.edmx</DependentUpon>
-      <LastGenOutput>Rezultate.Context.cs</LastGenOutput>
+      <DependentUpon>AzureResults.edmx</DependentUpon>
+      <LastGenOutput>AzureResults.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Domain\Rezultate.tt">
+    <Content Include="Domain\AzureResults.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Rezultate.edmx</DependentUpon>
-      <LastGenOutput>Rezultate1.cs</LastGenOutput>
+      <DependentUpon>AzureResults.edmx</DependentUpon>
+      <LastGenOutput>AzureResults.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

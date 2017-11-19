@@ -1,6 +1,6 @@
 ﻿using Entities.Domain;
 
-namespace Entities.Repository
+namespace Repository.Services
 {
     public class LocalRepository : GenericRepository<ResultsEntities, Rezultate>, IRepository<Rezultate>
     {
