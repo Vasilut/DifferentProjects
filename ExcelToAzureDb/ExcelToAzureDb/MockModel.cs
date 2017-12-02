@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ExcelToAzureDb
 {
-    public class MockModel 
+    public class ModelToExport 
     {
         public string Nume { get; set; }
         public string Prenume { get; set; }
