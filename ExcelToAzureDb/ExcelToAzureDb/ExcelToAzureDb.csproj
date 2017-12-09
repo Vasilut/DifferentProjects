@@ -70,7 +70,9 @@
   <ItemGroup>
     <Compile Include="FactoryClass\Constants.cs" />
     <Compile Include="FactoryClass\FactoryChooseClass.cs" />
-    <Compile Include="MockModel.cs" />
+    <Compile Include="Operation\BuildDictionary.cs" />
+    <Compile Include="Operation\Verifier.cs" />
+    <Compile Include="XlsxModel.cs" />
     <Compile Include="ModelFirst.cs" />
     <Compile Include="Operation\AssignPointToModel.cs" />
     <Compile Include="Program.cs" />

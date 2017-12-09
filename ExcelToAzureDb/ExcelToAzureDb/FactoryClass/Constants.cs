@@ -2,10 +2,11 @@
 {
     public static class Constants
     {
-        public static string[] Clasa12 = { "arb", "matricebinara", "prob3" };
-        public static string[] Clasa9 = { "prob1", "prob2", "prob3" };
-        public static string[] Clasa10 = { "prob1", "prob2", "prob3" };
-        public static string[] Clasa11 = { "prob1", "prob2", "prob3" };
+        public static string[] Clasa12 = { "centura", "galaxia", "sritech" };
+        public static string[] Clasa9 = { "agheu", "stelica", "numarare" };
+        public static string[] Clasa10 = { "valoare", "sumegal", "indice" };
+        public static string[] Clasa11 = { "loterie", "sefuti", "librarie" };
+        public static string[] Gimnaziu = { "flori", "castel"};
 
     }
 }

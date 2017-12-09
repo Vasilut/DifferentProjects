@@ -5,6 +5,7 @@ using Repository.Services;
 using EntitiesAzure.Domain;
 using ExcelToAzureDb.FactoryClass;
 using ExcelToAzureDb.Operation;
+using System.Collections.Generic;
 
 namespace ExcelToAzureDb
 {
@@ -14,36 +15,57 @@ namespace ExcelToAzureDb
         {
             //bag intr-un dictionar: cheie (nume elev)-> valoare clasa. dintr-un fisier initial.
 
+            var excelElevi = new ExcelQueryFactory(@"F:\Downloads\newbddorna.xlsx"); //iau excel-ul cu baza de date
+            var dataElevi = (from c in excelElevi.Worksheet<ModelElevi>("BAZA")
+                             select c)?.ToList();
 
-            var excel = new ExcelQueryFactory(@"F:\Downloads\bnnm.xlsx");
-            var data = (from c in excel.Worksheet<ModelToExport>("Clasament")
+            Dictionary<string, string> idToClass = new Dictionary<string, string>(); 
+            idToClass = new BuildDictionary().GetDb(); //build the dictionary between id's and class
+
+            Dictionary<string, int> classToNormal = new Dictionary<string, int>();
+            classToNormal["XII"] = 12;
+            classToNormal["XI"] = 11;
+            classToNormal["X"] = 10;
+            classToNormal["IX"] = 9;
+            classToNormal["VI"] = 6;
+
+
+
+            var excel = new ExcelQueryFactory(@"F:\Downloads\DornaGood.xlsx"); // de aici iau xlsx-ul cu rezultate (bnnm.xlsx)
+            var data = (from c in excel.Worksheet<ModelToExport>("Dorna") //sheet-ul unde e rezultatul
                         select c)?.ToList();
 
             foreach (ModelToExport item in data)
             {
                 Type type = item.GetType();
                 var propertyInfo = type.GetProperties();
+                string id = item.ID;
+                string clasa = idToClass[id];
 
                 //add to cloud db the results
                 var resultToAdd = new Rezultate
                 {
                     Nume = item.Nume,
                     Prenume = item.Prenume,
-                    Scoala = item.Scoala
+                    Scoala = item.Scoala,
+                    Clasa = classToNormal[clasa]
                 };
 
                 //loop over all the properties
                 foreach (var prop in propertyInfo)
                 {
-                    if (FactoryChooseClass.GetClasa("12").Contains(prop.Name))
+                    if (FactoryChooseClass.GetClasa(clasa).Contains(prop.Name))
                     {
                         object val = prop.GetValue(item, null); //valoarea
                         if (val != null)
                         {
+                            //see if you can convert the value
                             AssignPointToModel.AssignProblemPoint(ref resultToAdd, val);
                         }
                     }
                 }
+
+                //save in db (local or azure)
 
             }
 

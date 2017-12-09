@@ -10,26 +10,36 @@ namespace ExcelToAzureDb.FactoryClass
     {
         public static string[] GetClasa(string clasa)
         {
+            string[] arr = null;
             switch (clasa)
             {
-                case "9":
+                case "IX":
                     {
-                        return Constants.Clasa9;
+                        arr = Constants.Clasa9;
+                        break;
                     }
-                case "10":
+                case "X":
                     {
-                        return Constants.Clasa10;
+                        arr = Constants.Clasa10;
+                        break;
                     }
-                case "11":
+                case "XI":
                     {
-                        return Constants.Clasa11;
+                        arr = Constants.Clasa11;
+                        break;
                     }
-                case "12":
+                case "XII":
                     {
-                        return Constants.Clasa12;
+                        arr = Constants.Clasa12;
+                        break;
+                    }
+                default:
+                    {
+                        arr = Constants.Gimnaziu;
+                        break;
                     }
             }
-            return null;
+            return arr;
         }
     }
 }
