@@ -30,9 +30,9 @@ namespace TwitterStreamApp
         private void Start()
         {
             string accessToken = "842485645725581312-Cbj6GPdXWIeFg678cunLWheYExRBZRP";
-            string accessTokenSecret = "RhkrspO80netKiu8ghoFFLK5M0FQnvTVBnpGcrcl2muZV";
+            string accessTokenSecret = "";
             string consumerKey = "8XgXv2DwwDcrUopRR9wBjJTtQ";
-            string consumerSecret = "B15Tur1Kwi6hW29zxqKXzwkEuQqUEpxSo1h0us7IaAkaTAF16u";
+            string consumerSecret = "";
 
             // Set up your credentials (https://apps.twitter.com)
             Auth.SetUserCredentials(consumerKey, consumerSecret, accessToken, accessTokenSecret);
