@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LinqToExcel" Version="1.11.0" />
+    <PackageReference Include="LinqToExcel.Validate" Version="1.0.2" />
+    <PackageReference Include="Remotion" Version="1.18.0" />
+    <PackageReference Include="Remotion.Linq" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LinqToExcel">
+      <HintPath>F:\Downloads\LinqToExcel_x64_1.7.1\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>F:\Downloads\LinqToExcel_x64_1.7.1\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion">
+      <HintPath>F:\Downloads\LinqToExcel_x64_1.7.1\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>F:\Downloads\LinqToExcel_x64_1.7.1\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces">
+      <HintPath>F:\Downloads\LinqToExcel_x64_1.7.1\Remotion.Interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
